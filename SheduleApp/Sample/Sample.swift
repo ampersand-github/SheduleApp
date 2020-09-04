@@ -15,7 +15,7 @@ import SwiftUI
 
 class MyModel: Object {
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var title = "sssss"
+    @objc dynamic var title = "ss"
 }
 
 
