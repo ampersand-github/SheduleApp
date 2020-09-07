@@ -10,11 +10,11 @@ import RealmSwift
 import SwiftUI
 
 class SampleRealmModel: Object {
-    @objc dynamic var id = UUID().uuidString
-    @objc dynamic var title = "ss"
+  @objc dynamic var id = UUID().uuidString
+  @objc dynamic var title = "ss"
 }
 
 struct SampleModel {
-    let id: String
-    let title: String
+  let id: String
+  let title: String
 }

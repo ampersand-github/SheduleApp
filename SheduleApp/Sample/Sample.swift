@@ -11,30 +11,30 @@
 import SwiftUI
 
 struct SampleView: View {
-    @ObservedObject var sampleVM = SampleViewModel()
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(sampleVM.samples, id: \.id) { sample in
-                    HStack {
-                        Text("\(sample.title)")
-                        Button(action: { self.sampleVM.deleteRecord(id: sample.id) }, label: { Text("ゴミ") })
-                        Button(action: { self.sampleVM.editRecord(id: sample.id, title: "\(Date())") }, label: { Text("編集") })
-                        Button(action: { self.sampleVM.printAllData() }, label: { Text("出力") })
-                    }
-                }.buttonStyle(BorderlessButtonStyle())
-            }.navigationBarItems(trailing:
-                Button(
-                    action: { self.sampleVM.addRecord(string: "\(Date())") },
-                    label: { Text("ADD") }
-                )
-            )
-        }
+  @ObservedObject var sampleVM = SampleViewModel()
+  var body: some View {
+    NavigationView {
+      List {
+        ForEach(sampleVM.samples, id: \.id) { sample in
+          HStack {
+            Text("\(sample.title)")
+            Button(action: { self.sampleVM.deleteRecord(id: sample.id) }, label: { Text("ゴミ") })
+            Button(action: { self.sampleVM.editRecord(id: sample.id, title: "\(Date())") }, label: { Text("編集") })
+            Button(action: { self.sampleVM.printAllData() }, label: { Text("出力") })
+          }
+        }.buttonStyle(BorderlessButtonStyle())
+      }.navigationBarItems(trailing:
+        Button(
+          action: { self.sampleVM.addRecord(string: "\(Date())") },
+          label: { Text("ADD") }
+        )
+      )
     }
+  }
 }
-  
+
 struct Sample_Previews: PreviewProvider {
-    static var previews: some View {
-        SampleView()
-    }
+  static var previews: some View {
+    SampleView()
+  }
 }

@@ -9,13 +9,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
+  @Environment(\.presentationMode) var presentationMode
+  @State private var index: Int = 0
+  var body: some View {
+    ZStack {
+      VStack {
+        TabView {
+          SheduleView().environmentObject(TodoViewModel(isSetDammy: true))
+            .tabItem {
+              VStack {
+                Image(systemName: "square.and.pencil")
+                Text("メモ")
+              }
+            }.tag(1)
+          UserView()
+            .tabItem {
+              VStack {
+                Image(systemName: "person.crop.circle")
+                Text("設定")
+              }
+            }.tag(2)
+        }
+      }
+      EditingFloatingActionButton()
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }

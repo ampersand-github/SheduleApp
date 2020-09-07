@@ -19,6 +19,20 @@
 		D793C59D24FC4DBB00052127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D793C59B24FC4DBB00052127 /* LaunchScreen.storyboard */; };
 		D793C5A824FC4DBC00052127 /* SheduleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793C5A724FC4DBC00052127 /* SheduleAppTests.swift */; };
 		D793C5B324FC4DBC00052127 /* SheduleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793C5B224FC4DBC00052127 /* SheduleAppUITests.swift */; };
+		D7B409642505840000BFF61E /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409502505840000BFF61E /* TodoModel.swift */; };
+		D7B409652505840000BFF61E /* EditingFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409522505840000BFF61E /* EditingFloatingActionButton.swift */; };
+		D7B409672505840000BFF61E /* DeadlineParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409542505840000BFF61E /* DeadlineParts.swift */; };
+		D7B409682505840000BFF61E /* EditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409552505840000BFF61E /* EditingView.swift */; };
+		D7B409692505840000BFF61E /* SubmitButtonParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409562505840000BFF61E /* SubmitButtonParts.swift */; };
+		D7B4096A2505840000BFF61E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409572505840000BFF61E /* InputView.swift */; };
+		D7B4096B2505840000BFF61E /* TextFieldParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409582505840000BFF61E /* TextFieldParts.swift */; };
+		D7B4096D2505840000BFF61E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4095B2505840000BFF61E /* CardView.swift */; };
+		D7B4096F2505840000BFF61E /* SheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4095D2505840000BFF61E /* SheduleView.swift */; };
+		D7B409702505840000BFF61E /* InputModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4095F2505840000BFF61E /* InputModifier.swift */; };
+		D7B409712505840000BFF61E /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409602505840000BFF61E /* CustomDateFormatter.swift */; };
+		D7B409722505840000BFF61E /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409612505840000BFF61E /* DateUtils.swift */; };
+		D7B409732505840000BFF61E /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409632505840000BFF61E /* TodoViewModel.swift */; };
+		D7B409772505883900BFF61E /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409762505883900BFF61E /* UserView.swift */; };
 		D7BF04EB2502CC68003D66F6 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF04EA2502CC68003D66F6 /* SampleModel.swift */; };
 		D7BF04ED2502F69B003D66F6 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF04EC2502F69B003D66F6 /* SampleViewModel.swift */; };
 		D7BF04EF25030820003D66F6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7BF04EE25030820003D66F6 /* Podfile */; };
@@ -70,6 +84,20 @@
 		D793C5AE24FC4DBC00052127 /* SheduleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SheduleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D793C5B224FC4DBC00052127 /* SheduleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleAppUITests.swift; sourceTree = "<group>"; };
 		D793C5B424FC4DBC00052127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7B409502505840000BFF61E /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		D7B409522505840000BFF61E /* EditingFloatingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingFloatingActionButton.swift; sourceTree = "<group>"; };
+		D7B409542505840000BFF61E /* DeadlineParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadlineParts.swift; sourceTree = "<group>"; };
+		D7B409552505840000BFF61E /* EditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingView.swift; sourceTree = "<group>"; };
+		D7B409562505840000BFF61E /* SubmitButtonParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonParts.swift; sourceTree = "<group>"; };
+		D7B409572505840000BFF61E /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		D7B409582505840000BFF61E /* TextFieldParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldParts.swift; sourceTree = "<group>"; };
+		D7B4095B2505840000BFF61E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D7B4095D2505840000BFF61E /* SheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleView.swift; sourceTree = "<group>"; };
+		D7B4095F2505840000BFF61E /* InputModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputModifier.swift; sourceTree = "<group>"; };
+		D7B409602505840000BFF61E /* CustomDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		D7B409612505840000BFF61E /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		D7B409632505840000BFF61E /* TodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		D7B409762505883900BFF61E /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		D7BF04EA2502CC68003D66F6 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		D7BF04EC2502F69B003D66F6 /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
 		D7BF04EE25030820003D66F6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
@@ -129,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				D7BF04F225030D32003D66F6 /* .swiftlint.yml */,
+				D7BF04EE25030820003D66F6 /* Podfile */,
 				D793C58C24FC4DBA00052127 /* SheduleApp */,
 				D793C5A624FC4DBC00052127 /* SheduleAppTests */,
 				D793C5B124FC4DBC00052127 /* SheduleAppUITests */,
@@ -151,7 +180,8 @@
 		D793C58C24FC4DBA00052127 /* SheduleApp */ = {
 			isa = PBXGroup;
 			children = (
-				D7BF04EE25030820003D66F6 /* Podfile */,
+				D7B409742505880D00BFF61E /* User */,
+				D7B4094E2505835800BFF61E /* Shedule */,
 				D715EFC024FED5CB00FE09A8 /* Sample */,
 				D793C58D24FC4DBA00052127 /* AppDelegate.swift */,
 				D793C58F24FC4DBA00052127 /* SceneDelegate.swift */,
@@ -189,6 +219,98 @@
 				D793C5B424FC4DBC00052127 /* Info.plist */,
 			);
 			path = SheduleAppUITests;
+			sourceTree = "<group>";
+		};
+		D7B4094E2505835800BFF61E /* Shedule */ = {
+			isa = PBXGroup;
+			children = (
+				D7B4094F2505840000BFF61E /* Model */,
+				D7B4095E2505840000BFF61E /* Util */,
+				D7B409512505840000BFF61E /* View */,
+				D7B409622505840000BFF61E /* ViewModel */,
+			);
+			path = Shedule;
+			sourceTree = "<group>";
+		};
+		D7B4094F2505840000BFF61E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D7B409502505840000BFF61E /* TodoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D7B409512505840000BFF61E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7B4095D2505840000BFF61E /* SheduleView.swift */,
+				D7B4097A25058E1700BFF61E /* Card */,
+				D7B4097825058DA400BFF61E /* Editing */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7B4095E2505840000BFF61E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D7B4095F2505840000BFF61E /* InputModifier.swift */,
+				D7B409602505840000BFF61E /* CustomDateFormatter.swift */,
+				D7B409612505840000BFF61E /* DateUtils.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D7B409622505840000BFF61E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D7B409632505840000BFF61E /* TodoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D7B409742505880D00BFF61E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D7B409752505881E00BFF61E /* View */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D7B409752505881E00BFF61E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7B409762505883900BFF61E /* UserView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D7B4097825058DA400BFF61E /* Editing */ = {
+			isa = PBXGroup;
+			children = (
+				D7B409552505840000BFF61E /* EditingView.swift */,
+				D7B409522505840000BFF61E /* EditingFloatingActionButton.swift */,
+				D7B4097925058DE900BFF61E /* parts */,
+			);
+			path = Editing;
+			sourceTree = "<group>";
+		};
+		D7B4097925058DE900BFF61E /* parts */ = {
+			isa = PBXGroup;
+			children = (
+				D7B409582505840000BFF61E /* TextFieldParts.swift */,
+				D7B409562505840000BFF61E /* SubmitButtonParts.swift */,
+				D7B409542505840000BFF61E /* DeadlineParts.swift */,
+				D7B409572505840000BFF61E /* InputView.swift */,
+			);
+			path = parts;
+			sourceTree = "<group>";
+		};
+		D7B4097A25058E1700BFF61E /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				D7B4095B2505840000BFF61E /* CardView.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 		F734D6C483EA97BCE0763B5F /* Pods */ = {
@@ -427,7 +549,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --exclude Carthage,Pods --trimwhitespace nonblank-lines --stripunusedargs closure-only --disable strongOutlets,trailingCommas\n";
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --swiftversion 5.2.4 --exclude Carthage,Pods --stripunusedargs closure-only --disable strongOutlets,trailingCommas --indent 2 --allman false --binarygrouping none --closingparen balanced --commas inline --conflictmarkers reject --decimalgrouping none --elseposition same-line --exponentcase lowercase --exponentgrouping disabled --fractiongrouping disabled --fragment false --header ignore --hexgrouping none --hexliteralcase uppercase --ifdef indent --importgrouping alphabetized --indentcase false --linebreaks lf --octalgrouping none --operatorfunc spaced --patternlet hoist --self remove --selfrequired --semicolons inline --stripunusedargs closure-only --trailingclosures --trimwhitespace always --wraparguments before-first --wrapcollections before-first\n";
 		};
 		D7BF04F125030CE5003D66F6 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -455,11 +577,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				D715EFC224FED5EA00FE09A8 /* Sample.swift in Sources */,
+				D7B4096A2505840000BFF61E /* InputView.swift in Sources */,
+				D7B409642505840000BFF61E /* TodoModel.swift in Sources */,
+				D7B4096F2505840000BFF61E /* SheduleView.swift in Sources */,
+				D7B409692505840000BFF61E /* SubmitButtonParts.swift in Sources */,
+				D7B409682505840000BFF61E /* EditingView.swift in Sources */,
 				D7BF04EB2502CC68003D66F6 /* SampleModel.swift in Sources */,
+				D7B409672505840000BFF61E /* DeadlineParts.swift in Sources */,
+				D7B409722505840000BFF61E /* DateUtils.swift in Sources */,
 				D793C58E24FC4DBA00052127 /* AppDelegate.swift in Sources */,
+				D7B409652505840000BFF61E /* EditingFloatingActionButton.swift in Sources */,
 				D7BF04ED2502F69B003D66F6 /* SampleViewModel.swift in Sources */,
 				D793C59024FC4DBA00052127 /* SceneDelegate.swift in Sources */,
 				D793C59524FC4DBA00052127 /* ContentView.swift in Sources */,
+				D7B4096B2505840000BFF61E /* TextFieldParts.swift in Sources */,
+				D7B409712505840000BFF61E /* CustomDateFormatter.swift in Sources */,
+				D7B409772505883900BFF61E /* UserView.swift in Sources */,
+				D7B409732505840000BFF61E /* TodoViewModel.swift in Sources */,
+				D7B409702505840000BFF61E /* InputModifier.swift in Sources */,
+				D7B4096D2505840000BFF61E /* CardView.swift in Sources */,
 				D793C59324FC4DBA00052127 /* SheduleApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
