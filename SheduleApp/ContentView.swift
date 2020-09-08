@@ -15,7 +15,7 @@ struct ContentView: View {
     ZStack {
       VStack {
         TabView {
-          SheduleView().environmentObject(TodoViewModel(isSetDammy: true))
+          SheduleView().environmentObject(SheduleViewModel(isSetDammy: true))
             .tabItem {
               VStack {
                 Image(systemName: "square.and.pencil")

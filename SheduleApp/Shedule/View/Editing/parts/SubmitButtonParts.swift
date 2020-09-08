@@ -10,8 +10,9 @@ import SwiftUI
 
 struct SubmitButtonParts: View {
   @Binding var isPresented: Bool
-  @EnvironmentObject var todoVM: TodoViewModel
-  var todo: TodoModel
+  @EnvironmentObject var todoVM: SheduleViewModel
+  @ObservedObject var sheduleVM = SheduleViewModel()
+  var todo: SheduleModel
   let opacity: Double
   var body: some View {
     Button(
@@ -21,7 +22,8 @@ struct SubmitButtonParts: View {
         // todo　引数で渡されたmodelをapeendする
         // todo 処理をviewの中で書かない。vmで書いて、それに渡して上げるだけ
         print(self.todo)
-        self.todoVM.todoList.append(self.todo)
+        // self.todoVM.todoList.append(self.todo)
+        self.sheduleVM.addRecord()
       },
       // todo button アイコン化
       label: { Text("  決定  ").bold().font(.body).foregroundColor(Color.white) }

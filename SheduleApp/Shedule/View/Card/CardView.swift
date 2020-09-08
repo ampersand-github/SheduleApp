@@ -23,8 +23,8 @@ struct CheckView: View {
 }
 
 struct CardView: View {
-  @EnvironmentObject var todoVM: TodoViewModel
-  var todo: TodoModel
+  @EnvironmentObject var todoVM: SheduleViewModel
+  var todo: SheduleModel
   let today: Date = Calendar.current.startOfDay(for: Date())
   func setTargetDay(day: Date) -> Date { Calendar.current.startOfDay(for: day) }
   var body: some View {
@@ -78,12 +78,12 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
   static var previews: some View {
-    CardViewPreview(todoVM: TodoViewModel(isSetDammy: true))
+    CardViewPreview(todoVM: SheduleViewModel(isSetDammy: true))
   }
 }
 
 struct CardViewPreview: View {
-  @State var todoVM: TodoViewModel
+  @State var todoVM: SheduleViewModel
 
   var body: some View {
     ScrollView {

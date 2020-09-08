@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SheduleView: View {
-  @EnvironmentObject var todoVM: TodoViewModel
+  @EnvironmentObject var todoVM: SheduleViewModel
   @State private var vibrateOnRing = false
   static let dateFormatter: DateFormatter = customDateFormatter(format: "yyyy/MM/dd")
   static let timeFormatter: DateFormatter = customDateFormatter(format: "hh:mm")
@@ -30,6 +30,6 @@ struct SheduleView: View {
 
 struct SheduleView_Previews: PreviewProvider {
   static var previews: some View {
-    SheduleView().environmentObject(TodoViewModel(isSetDammy: true))
+    SheduleView().environmentObject(SheduleViewModel(isSetDammy: true))
   }
 }

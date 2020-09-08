@@ -10,7 +10,7 @@ import SwiftUI
 
 struct InputParts: View {
   @State private var string: String = ""
-  @ObservedObject var todoVM: TodoViewModel
+  @ObservedObject var todoVM: SheduleViewModel
   var body: some View {
     TextField(
       "メモを入力",

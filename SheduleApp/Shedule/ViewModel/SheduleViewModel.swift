@@ -1,0 +1,85 @@
+//
+//  TodoViewModel.swift
+//  SwiftUIPrograming
+//
+//  Created by 開発 on 2020/08/14.
+//  Copyright © 2020 開発. All rights reserved.
+//
+
+import RealmSwift
+import SwiftUI
+
+class SheduleViewModel: ObservableObject {
+  // editingで使用する一時的な値を入れる変数
+  @Published var editingShedule: SheduleModel = SheduleModel()
+  // - - - - -
+  // 表示するときは[model]で、書き込みなどのdb操作をする場合はrealm
+  // - - - - -
+  private var token: NotificationToken?
+  private var modelResults = try? Realm().objects(SheduleRealmModel.self)
+  @Published var todoList: [SheduleModel] = []
+
+  init(isSetDammy: Bool = false) {
+    token = modelResults?.observe { [weak self] _ in
+      self?.todoList = self?.modelResults?.map {
+        SheduleModel(id: $0.id, title: $0.title, dateDeadLine: $0.dateDeadLine, timeDeadLine: $0.timeDeadLine, isComplete: $0.isComplete)
+      } ?? []
+    }
+  }
+
+  deinit {
+    token?.invalidate()
+  }
+
+  /*
+   func addDammyList() {
+     let dammy1 = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
+     let dammy2 = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+     let dammy3 = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
+     let dammy4 = Calendar.current.date(byAdding: .day, value: 2, to: Date())!
+     let dammy5 = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
+     let dammy6 = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
+     let dammy7 = Calendar.current.date(byAdding: .day, value: 4, to: Date())!
+     todoList.append(
+       contentsOf: [
+         SheduleModel(title: "アマゾンの注文が届く", dateDeadLine: dammy1, timeDeadLine: dammy1, isComplete: false),
+         SheduleModel(title: "OOUI本読む", dateDeadLine: dammy2, timeDeadLine: dammy2, isComplete: true),
+         SheduleModel(title: "試験の申込み", dateDeadLine: dammy3, timeDeadLine: dammy3, isComplete: false),
+         SheduleModel(title: "友達と遊ぶ", dateDeadLine: dammy4, timeDeadLine: dammy4, isComplete: false),
+         SheduleModel(title: "試験のための本を買う", dateDeadLine: dammy5, timeDeadLine: dammy5, isComplete: false),
+         SheduleModel(title: "クリーニングに出す", dateDeadLine: dammy6, timeDeadLine: dammy6, isComplete: false),
+         SheduleModel(title: "衣替えする", dateDeadLine: dammy7, timeDeadLine: dammy7, isComplete: false)
+       ]
+     )
+   }
+   */
+
+  func convertFromModelToRealmModel(model: SheduleModel) -> SheduleRealmModel {
+    /*
+     return SheduleRealmModel(
+       id: model.id,
+       title : model.title,
+       dateDeadLine :  model.dateDeadLine,
+       timeDeadLine : model.timeDeadLine,
+       isComplete : model.isComplete
+     )
+     */
+    var aaaa = SheduleRealmModel()
+
+    aaaa.title = "aaaaaaaaa"
+    return aaaa
+  }
+
+  func addRecord() {
+    let realm = try? Realm()
+    let model = SheduleRealmModel()
+    //
+    //
+
+    try? realm?.write {
+      realm?.add(
+        convertFromModelToRealmModel(model: editingShedule)
+      )
+    }
+  }
+}

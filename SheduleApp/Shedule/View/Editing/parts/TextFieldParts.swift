@@ -9,16 +9,27 @@
 import SwiftUI
 
 struct TextFieldParts: View {
-  @Binding var memoTitle: String
+  @State private var title = ""
+  @ObservedObject var sheduleVM = SheduleViewModel()
   var body: some View {
     VStack(alignment: .leading) {
       Text("メモのタイトル").font(.headline)
-      TextField("メモを入力", text: $memoTitle)
-        .padding(.all)
-        .modifier(InputModifier())
-      if self.memoTitle.count == 0 {
-        Text("※" + "メモのタイトルを入力してください。").font(.caption).foregroundColor(Color.red)
-      }
+      TextField(
+        "メモを入力", text: $title,
+        onEditingChanged: { _ in self.sheduleVM.editingShedule.title = self.title
+          print(self.sheduleVM.editingShedule.title)
+          print("ssdss")
+        }
+      )
+      .padding(.all)
+      .modifier(InputModifier())
+      // TODO: validateはvmへ
+      /*
+       if self.title.count == 0 {
+              Text("※" + "メモのタイトルを入力してください。")
+                .font(.caption)
+                .foregroundColor(Color.red)
+            }*/
     }
   }
 }

@@ -19,7 +19,7 @@
 		D793C59D24FC4DBB00052127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D793C59B24FC4DBB00052127 /* LaunchScreen.storyboard */; };
 		D793C5A824FC4DBC00052127 /* SheduleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793C5A724FC4DBC00052127 /* SheduleAppTests.swift */; };
 		D793C5B324FC4DBC00052127 /* SheduleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793C5B224FC4DBC00052127 /* SheduleAppUITests.swift */; };
-		D7B409642505840000BFF61E /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409502505840000BFF61E /* TodoModel.swift */; };
+		D7B409642505840000BFF61E /* SheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409502505840000BFF61E /* SheduleModel.swift */; };
 		D7B409652505840000BFF61E /* EditingFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409522505840000BFF61E /* EditingFloatingActionButton.swift */; };
 		D7B409672505840000BFF61E /* DeadlineParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409542505840000BFF61E /* DeadlineParts.swift */; };
 		D7B409682505840000BFF61E /* EditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409552505840000BFF61E /* EditingView.swift */; };
@@ -31,7 +31,7 @@
 		D7B409702505840000BFF61E /* InputModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4095F2505840000BFF61E /* InputModifier.swift */; };
 		D7B409712505840000BFF61E /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409602505840000BFF61E /* CustomDateFormatter.swift */; };
 		D7B409722505840000BFF61E /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409612505840000BFF61E /* DateUtils.swift */; };
-		D7B409732505840000BFF61E /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409632505840000BFF61E /* TodoViewModel.swift */; };
+		D7B409732505840000BFF61E /* SheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409632505840000BFF61E /* SheduleViewModel.swift */; };
 		D7B409772505883900BFF61E /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409762505883900BFF61E /* UserView.swift */; };
 		D7BF04EB2502CC68003D66F6 /* SampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF04EA2502CC68003D66F6 /* SampleModel.swift */; };
 		D7BF04ED2502F69B003D66F6 /* SampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF04EC2502F69B003D66F6 /* SampleViewModel.swift */; };
@@ -84,7 +84,7 @@
 		D793C5AE24FC4DBC00052127 /* SheduleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SheduleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D793C5B224FC4DBC00052127 /* SheduleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleAppUITests.swift; sourceTree = "<group>"; };
 		D793C5B424FC4DBC00052127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7B409502505840000BFF61E /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		D7B409502505840000BFF61E /* SheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleModel.swift; sourceTree = "<group>"; };
 		D7B409522505840000BFF61E /* EditingFloatingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingFloatingActionButton.swift; sourceTree = "<group>"; };
 		D7B409542505840000BFF61E /* DeadlineParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadlineParts.swift; sourceTree = "<group>"; };
 		D7B409552505840000BFF61E /* EditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingView.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		D7B4095F2505840000BFF61E /* InputModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputModifier.swift; sourceTree = "<group>"; };
 		D7B409602505840000BFF61E /* CustomDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		D7B409612505840000BFF61E /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
-		D7B409632505840000BFF61E /* TodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		D7B409632505840000BFF61E /* SheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleViewModel.swift; sourceTree = "<group>"; };
 		D7B409762505883900BFF61E /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		D7BF04EA2502CC68003D66F6 /* SampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModel.swift; sourceTree = "<group>"; };
 		D7BF04EC2502F69B003D66F6 /* SampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewModel.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		D7B4094F2505840000BFF61E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D7B409502505840000BFF61E /* TodoModel.swift */,
+				D7B409502505840000BFF61E /* SheduleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 		D7B409622505840000BFF61E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D7B409632505840000BFF61E /* TodoViewModel.swift */,
+				D7B409632505840000BFF61E /* SheduleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -578,7 +578,7 @@
 			files = (
 				D715EFC224FED5EA00FE09A8 /* Sample.swift in Sources */,
 				D7B4096A2505840000BFF61E /* InputView.swift in Sources */,
-				D7B409642505840000BFF61E /* TodoModel.swift in Sources */,
+				D7B409642505840000BFF61E /* SheduleModel.swift in Sources */,
 				D7B4096F2505840000BFF61E /* SheduleView.swift in Sources */,
 				D7B409692505840000BFF61E /* SubmitButtonParts.swift in Sources */,
 				D7B409682505840000BFF61E /* EditingView.swift in Sources */,
@@ -593,7 +593,7 @@
 				D7B4096B2505840000BFF61E /* TextFieldParts.swift in Sources */,
 				D7B409712505840000BFF61E /* CustomDateFormatter.swift in Sources */,
 				D7B409772505883900BFF61E /* UserView.swift in Sources */,
-				D7B409732505840000BFF61E /* TodoViewModel.swift in Sources */,
+				D7B409732505840000BFF61E /* SheduleViewModel.swift in Sources */,
 				D7B409702505840000BFF61E /* InputModifier.swift in Sources */,
 				D7B4096D2505840000BFF61E /* CardView.swift in Sources */,
 				D793C59324FC4DBA00052127 /* SheduleApp.xcdatamodeld in Sources */,

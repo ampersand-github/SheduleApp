@@ -10,7 +10,7 @@ import SwiftUI
 
 struct EditingFloatingActionButton: View {
   @State private var isPresented = false
-  @EnvironmentObject var todo: TodoViewModel
+  @EnvironmentObject var todo: SheduleViewModel
 
   var body: some View {
     VStack {
@@ -32,8 +32,8 @@ struct EditingFloatingActionButton: View {
       }.sheet(isPresented: $isPresented) {
         EditingView(
           isPresented: self.$isPresented,
-          todo: TodoModel()
-        ).environmentObject(TodoViewModel())
+          todo: SheduleModel()
+        ).environmentObject(SheduleViewModel())
       }
     }
   }
