@@ -10,7 +10,9 @@ import SwiftUI
 
 struct DeadlineParts: View {
   var type: String
-  @Binding var date: Date
+  @EnvironmentObject var sheduleVM: SheduleViewModel
+  // @State private var selectionDate = Date()
+  // @State var tempDate: Date
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   lazy var title = type == "date" ? "日付" : "時間"
   func getTitle() -> String {
@@ -25,12 +27,19 @@ struct DeadlineParts: View {
       Text(getTitle() + "の期限").font(.headline)
       VStack {
         Group {
-          DatePicker(selection: $date, displayedComponents: type == "date" ? .date : .hourAndMinute) {
-            Text("")
-          }.labelsHidden()
-        }
-      }.modifier(InputModifier())
-      Spacer().frame(height: 24)
+          if getTitle() == "日付" {
+            DatePicker(selection: $sheduleVM.editingShedule.dateDeadLine, displayedComponents: type == "date" ? .date : .hourAndMinute) {
+              Text("")
+            }.labelsHidden()
+          } else {
+            DatePicker(selection: $sheduleVM.editingShedule.timeDeadLine, displayedComponents: type == "date" ? .date : .hourAndMinute) {
+              Text("")
+            }.labelsHidden()
+          }
+
+        }.modifier(InputModifier())
+        Spacer().frame(height: 24)
+      }
     }
   }
 }

@@ -10,10 +10,9 @@ import SwiftUI
 
 struct SubmitButtonParts: View {
   @Binding var isPresented: Bool
-  @EnvironmentObject var todoVM: SheduleViewModel
-  @ObservedObject var sheduleVM = SheduleViewModel()
-  var todo: SheduleModel
   let opacity: Double
+  @EnvironmentObject var sheduleVM: SheduleViewModel
+
   var body: some View {
     Button(
       action: {
@@ -21,7 +20,7 @@ struct SubmitButtonParts: View {
         // https://capibara1969.com/2508/ リファクタリングするときここ参照
         // todo　引数で渡されたmodelをapeendする
         // todo 処理をviewの中で書かない。vmで書いて、それに渡して上げるだけ
-        print(self.todo)
+        print(self.sheduleVM.editingShedule)
         // self.todoVM.todoList.append(self.todo)
         self.sheduleVM.addRecord()
       },

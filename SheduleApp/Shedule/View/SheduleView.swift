@@ -30,6 +30,7 @@ struct SheduleView: View {
 
 struct SheduleView_Previews: PreviewProvider {
   static var previews: some View {
-    SheduleView().environmentObject(SheduleViewModel(isSetDammy: true))
+    Text("a")
+    // SheduleView().environmentObject(SheduleViewModel(isSetDammy: true))
   }
 }

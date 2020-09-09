@@ -10,8 +10,6 @@ import SwiftUI
 
 struct EditingFloatingActionButton: View {
   @State private var isPresented = false
-  @EnvironmentObject var todo: SheduleViewModel
-
   var body: some View {
     VStack {
       Spacer()

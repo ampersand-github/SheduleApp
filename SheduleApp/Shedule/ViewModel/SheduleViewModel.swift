@@ -65,12 +65,20 @@ class SheduleViewModel: ObservableObject {
      )
      */
     var aaaa = SheduleRealmModel()
-
-    aaaa.title = "aaaaaaaaa"
+    print("- - - - - -")
+    print(editingShedule.title
+    )
+    aaaa.title = editingShedule.title
+    aaaa.title = editingShedule.title
+    aaaa.dateDeadLine = editingShedule.dateDeadLine
+    aaaa.timeDeadLine = editingShedule.timeDeadLine
+    aaaa.isComplete = editingShedule.isComplete
     return aaaa
   }
 
   func addRecord() {
+    print("addRecord(): title: \(editingShedule.title) ")
+    print("addRecord()\(convertFromModelToRealmModel(model: editingShedule)) ")
     let realm = try? Realm()
     let model = SheduleRealmModel()
     //

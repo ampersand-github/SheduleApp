@@ -9,16 +9,18 @@
 import SwiftUI
 
 struct TextFieldParts: View {
-  @State private var title = ""
-  @ObservedObject var sheduleVM = SheduleViewModel()
+  @State private var title: String = ""
+  @EnvironmentObject var sheduleVM: SheduleViewModel
   var body: some View {
     VStack(alignment: .leading) {
       Text("メモのタイトル").font(.headline)
       TextField(
         "メモを入力", text: $title,
         onEditingChanged: { _ in self.sheduleVM.editingShedule.title = self.title
-          print(self.sheduleVM.editingShedule.title)
-          print("ssdss")
+          print("onEditingChanged: \(self.sheduleVM.editingShedule.title)")
+        },
+        onCommit: { self.sheduleVM.editingShedule.title = self.title
+          print("ｓｆｄｓ: \(self.sheduleVM.editingShedule.title)")
         }
       )
       .padding(.all)

@@ -11,7 +11,7 @@ import SwiftUI
 struct EditingView: View {
   @Binding var isPresented: Bool
   @State var todo: SheduleModel
-  @ObservedObject var sheduleVM = SheduleViewModel()
+  @EnvironmentObject var sheduleVM: SheduleViewModel
   var body: some View {
     NavigationView {
       ScrollView {
@@ -19,9 +19,9 @@ struct EditingView: View {
           Spacer().frame(height: 24)
           TextFieldParts()
           Spacer().frame(height: 16)
-          DeadlineParts(type: "date", date: $todo.dateDeadLine)
+          DeadlineParts(type: "date")
           Spacer().frame(height: 16)
-          DeadlineParts(type: "hour", date: $todo.timeDeadLine)
+          DeadlineParts(type: "hour")
           Spacer().frame(height: 32)
           /*
            if self.sheduleVM.editingShedule.title.count == 0 {
@@ -30,7 +30,7 @@ struct EditingView: View {
              SubmitButtonParts(isPresented: self.$isPresented, todo: self.todo, opacity: 1.0)
            }
            */
-          SubmitButtonParts(isPresented: self.$isPresented, todo: self.todo, opacity: 1.0)
+          SubmitButtonParts(isPresented: self.$isPresented, opacity: 1.0)
           Spacer()
             .navigationBarTitle("メモを作成")
         }
