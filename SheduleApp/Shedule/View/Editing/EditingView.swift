@@ -23,13 +23,6 @@ struct EditingView: View {
           Spacer().frame(height: 16)
           DeadlineParts(type: "hour")
           Spacer().frame(height: 32)
-          /*
-           if self.sheduleVM.editingShedule.title.count == 0 {
-           SubmitButtonParts(isPresented: self.$isPresented, todo: self.todo, opacity: 0.6).disabled(true)
-           } else {
-             SubmitButtonParts(isPresented: self.$isPresented, todo: self.todo, opacity: 1.0)
-           }
-           */
           SubmitButtonParts(isPresented: self.$isPresented, opacity: 1.0)
           Spacer()
             .navigationBarTitle("メモを作成")

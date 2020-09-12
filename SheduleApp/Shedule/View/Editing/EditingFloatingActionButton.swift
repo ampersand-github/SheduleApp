@@ -20,7 +20,7 @@ struct EditingFloatingActionButton: View {
           Image(systemName: "plus")
             .foregroundColor(.white)
             .font(.system(size: 40))
-            .frame(width: 56, height: 56) // 選択領域をオレンジ円と同じにする
+            .frame(width: 56, height: 56) 
         })
           .frame(width: 56, height: 56)
           .background(Color.orange)

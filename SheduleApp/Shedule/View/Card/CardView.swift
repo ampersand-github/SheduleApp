@@ -29,9 +29,16 @@ struct CardView: View {
   func setTargetDay(day: Date) -> Date { Calendar.current.startOfDay(for: day) }
   var body: some View {
     HStack {
-      // TODO: spacingはここでやらないのであとで消す
-      // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -
-      Spacer().frame(width: 16)
+      VStack(alignment: .center) {
+        // TODO: 四角いペンにする
+        // TODO: 編集画面に飛ぶ
+        Image(systemName: "pencil")
+        Spacer().frame(height: 16)
+        // TODO: チェックボックスにする
+        Image(systemName: "pencil")
+        // TODO: 更新できるように
+        // TODO: チェック時にグレーアウト
+      }
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -
       VStack(alignment: .leading) {
         Text(self.todo.title).font(.headline)
