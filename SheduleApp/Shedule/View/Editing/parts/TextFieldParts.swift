@@ -26,6 +26,7 @@ struct TextFieldParts: View {
       .padding(.all)
       .modifier(InputModifier())
       // TODO: validateはvmへ
+      // TODO: validate 30字以内
       /*
        if self.title.count == 0 {
               Text("※" + "メモのタイトルを入力してください。")

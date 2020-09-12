@@ -30,13 +30,12 @@ struct CardView: View {
   var body: some View {
     HStack {
       VStack(alignment: .center) {
-        // TODO: 四角いペンにする
         // TODO: 編集画面に飛ぶ
-        Image(systemName: "pencil")
+        Image(systemName: "square.and.pencil")
         Spacer().frame(height: 16)
-        // TODO: チェックボックスにする
-        Image(systemName: "pencil")
+        Image(systemName: "square")
         // TODO: 更新できるように
+        // Image(systemName: isChecked ? "checkmark.square": "square")
         // TODO: チェック時にグレーアウト
       }
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -

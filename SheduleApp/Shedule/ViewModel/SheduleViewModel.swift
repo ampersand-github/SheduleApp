@@ -55,16 +55,7 @@ class SheduleViewModel: ObservableObject {
    */
 
   func convertFromModelToRealmModel(model: SheduleModel) -> SheduleRealmModel {
-    /*
-     return SheduleRealmModel(
-       id: model.id,
-       title : model.title,
-       dateDeadLine :  model.dateDeadLine,
-       timeDeadLine : model.timeDeadLine,
-       isComplete : model.isComplete
-     )
-     */
-    var aaaa = SheduleRealmModel()
+    let aaaa = SheduleRealmModel()
     print("- - - - - -")
     print(editingShedule.title
     )
@@ -90,4 +81,24 @@ class SheduleViewModel: ObservableObject {
       )
     }
   }
+
+  func deleteRecord(indexSet: IndexSet) {
+    print(indexSet)
+    if indexSet.first != nil {
+      let realm = try? Realm()
+      try? realm?.write {
+        if let index = indexSet.first, let record = realm?.objects(SheduleRealmModel.self).filter("id = %@", self.todoList[index].id).first {
+          realm?.delete(record)
+        }
+      }
+    }
+  }
+
+  /*
+   func deleteAll() {
+     for todo in todoList {
+       deleteRecord(todo.id)
+     }
+   }
+   */
 }

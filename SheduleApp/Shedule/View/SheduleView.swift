@@ -11,9 +11,9 @@ import SwiftUI
 struct SheduleView: View {
   @EnvironmentObject var todoVM: SheduleViewModel
   @State private var vibrateOnRing = false
+  // TODO: ｖｍへ
   static let dateFormatter: DateFormatter = customDateFormatter(format: "yyyy/MM/dd")
   static let timeFormatter: DateFormatter = customDateFormatter(format: "hh:mm")
-  @State private var fruits = ["りんご", "オレンジ", "バナナ", "パイナップル", "いちご"]
 
   var body: some View {
     // TODO: セーフエリアの設定
@@ -25,7 +25,10 @@ struct SheduleView: View {
             CardView(todo: todo)
             Spacer().frame(height: 8)
           }
-        }.onDelete(perform: rowRemove).onMove(perform: rowReplace)
+        }
+        // .onDelete { _ in self.todoVM.deleteAll() }
+        .onDelete { indexSet in self.todoVM.deleteRecord(indexSet: indexSet) }
+        .onMove(perform: rowReplace)
       }.onAppear { UITableView.appearance().separatorStyle = .none }
         .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
 
@@ -36,35 +39,12 @@ struct SheduleView: View {
 }
 
 // TODO: つくる
-func rowRemove(offsets: IndexSet) {
-  // fruits.remove(atOffsets: offsets)
-}
-
-// TODO: つくる
 func rowReplace(_ from: IndexSet, _ to: Int) {
   //    fruits.move(fromOffsets: from, toOffset: to)
 }
 
 struct SheduleView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView1()
-  }
-}
-
-struct ContentView1: View {
-  @State private var animals: [String] = ["🐶", "🐱"]
-
-  var body: some View {
-    VStack {
-      EditButton()
-      List {
-        ForEach(0 ..< animals.count) { iii in
-          TextField("", text: self.$animals[iii])
-        }
-        .onDelete { indexSet in
-          self.animals.remove(atOffsets: indexSet)
-        }
-      }
-    }
+    /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
   }
 }
