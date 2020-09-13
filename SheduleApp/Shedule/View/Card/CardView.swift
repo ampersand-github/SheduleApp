@@ -8,17 +8,16 @@
 
 import SwiftUI
 
-struct CheckView: View {
-  @State var isChecked: Bool = false
-  func toggle() {
-    isChecked = !isChecked
-  }
-
-  var body: some View {
-    Button(action: toggle) {
-      Image(systemName: isChecked ? "checkmark.square" : "square")
-
-    }.foregroundColor(.black).opacity(0.6)
+struct CheckboxToggleStyle: ToggleStyle {
+  func makeBody(configuration: Configuration) -> some View {
+    return HStack {
+      configuration.label
+      Spacer()
+      Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+        .resizable()
+        .frame(width: 22, height: 22)
+        .onTapGesture { configuration.isOn.toggle() }
+    }
   }
 }
 
@@ -27,25 +26,35 @@ struct CardView: View {
   var todo: SheduleModel
   let today: Date = Calendar.current.startOfDay(for: Date())
   func setTargetDay(day: Date) -> Date { Calendar.current.startOfDay(for: day) }
+  func toggle() {
+    todoVM.toggle(id: todo.id, isComplete: todo.isComplete)
+    print("toggle")
+  }
+
+  func edit() {
+    print("edit")
+  }
+
+  @State private var status = true
   var body: some View {
     HStack {
       VStack(alignment: .center) {
         // TODO: 編集画面に飛ぶ
-        Image(systemName: "square.and.pencil")
+        Image(systemName: "square.and.pencil").onTapGesture {
+          self.edit()
+        }
         Spacer().frame(height: 16)
-        Image(systemName: "square")
-        // TODO: 更新できるように
-        // Image(systemName: isChecked ? "checkmark.square": "square")
-        // TODO: チェック時にグレーアウト
+        Image(systemName: todo.isComplete ? "checkmark.square" : "square").onTapGesture {
+          self.toggle()
+        }
       }
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -
       VStack(alignment: .leading) {
         Text(self.todo.title).font(.headline)
         Spacer().frame(height: 8)
         HStack {
-          // TODO: Viewが処理を持っているのはよくない。vmへ移動
-          Text(SheduleView.dateFormatter.string(from: self.todo.dateDeadLine))
-          Text(SheduleView.timeFormatter.string(from: self.todo.timeDeadLine))
+          Text(todoVM.dateFormatter.string(from: self.todo.dateDeadLine))
+          Text(todoVM.timeFormatter.string(from: self.todo.timeDeadLine))
         }.font(.caption).opacity(0.6)
       }
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -

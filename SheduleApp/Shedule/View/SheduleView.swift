@@ -11,14 +11,10 @@ import SwiftUI
 struct SheduleView: View {
   @EnvironmentObject var todoVM: SheduleViewModel
   @State private var vibrateOnRing = false
-  // TODO: ｖｍへ
-  static let dateFormatter: DateFormatter = customDateFormatter(format: "yyyy/MM/dd")
-  static let timeFormatter: DateFormatter = customDateFormatter(format: "hh:mm")
-
   var body: some View {
     // TODO: セーフエリアの設定
     VStack(alignment: .leading) {
-      EditButton()
+      // EditButton()
       List {
         ForEach(todoVM.todoList) { todo in
           VStack {
@@ -26,9 +22,8 @@ struct SheduleView: View {
             Spacer().frame(height: 8)
           }
         }
-        // .onDelete { _ in self.todoVM.deleteAll() }
         .onDelete { indexSet in self.todoVM.deleteRecord(indexSet: indexSet) }
-        .onMove(perform: rowReplace)
+        .onMove(perform: moveRecord)
       }.onAppear { UITableView.appearance().separatorStyle = .none }
         .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
 
@@ -39,9 +34,7 @@ struct SheduleView: View {
 }
 
 // TODO: つくる
-func rowReplace(_ from: IndexSet, _ to: Int) {
-  //    fruits.move(fromOffsets: from, toOffset: to)
-}
+func moveRecord(_ from: IndexSet, _ to: Int) {}
 
 struct SheduleView_Previews: PreviewProvider {
   static var previews: some View {

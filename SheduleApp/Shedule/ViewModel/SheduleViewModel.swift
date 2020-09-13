@@ -10,6 +10,8 @@ import RealmSwift
 import SwiftUI
 
 class SheduleViewModel: ObservableObject {
+  let dateFormatter: DateFormatter = customDateFormatter(format: "yyyy/MM/dd")
+  let timeFormatter: DateFormatter = customDateFormatter(format: "hh:mm")
   // editingで使用する一時的な値を入れる変数
   @Published var editingShedule: SheduleModel = SheduleModel()
   // - - - - -
@@ -53,6 +55,13 @@ class SheduleViewModel: ObservableObject {
      )
    }
    */
+  func toggle(id: String, isComplete: Bool) {
+    let realm = try? Realm()
+    let record = realm?.objects(SheduleRealmModel.self).filter("id = %@", id).first
+    try? realm?.write {
+      record?.isComplete = !isComplete
+    }
+  }
 
   func convertFromModelToRealmModel(model: SheduleModel) -> SheduleRealmModel {
     let aaaa = SheduleRealmModel()
@@ -68,13 +77,7 @@ class SheduleViewModel: ObservableObject {
   }
 
   func addRecord() {
-    print("addRecord(): title: \(editingShedule.title) ")
-    print("addRecord()\(convertFromModelToRealmModel(model: editingShedule)) ")
     let realm = try? Realm()
-    let model = SheduleRealmModel()
-    //
-    //
-
     try? realm?.write {
       realm?.add(
         convertFromModelToRealmModel(model: editingShedule)
@@ -94,11 +97,13 @@ class SheduleViewModel: ObservableObject {
     }
   }
 
-  /*
-   func deleteAll() {
-     for todo in todoList {
-       deleteRecord(todo.id)
-     }
-   }
-   */
+  func deleteAll() {
+    let realm = try? Realm()
+    for todo in todoList {
+      let record = realm?.objects(SheduleRealmModel.self).filter("id = %@", todo.id).first
+      try? realm?.write {
+        realm?.delete(record!)
+      }
+    }
+  }
 }
