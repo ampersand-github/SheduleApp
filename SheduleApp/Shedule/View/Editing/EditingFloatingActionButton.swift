@@ -26,11 +26,11 @@ struct EditingFloatingActionButton: View {
           .background(Color.orange)
           .cornerRadius(48.0)
           .shadow(color: .gray, radius: 3, x: 3, y: 3)
-          .padding(EdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 16.0)) // --- 5
+          .padding(EdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 16.0))
       }.sheet(isPresented: $isPresented) {
         EditingView(
           isPresented: self.$isPresented,
-          todo: SheduleModel()
+          shedule: SheduleModel()
         ).environmentObject(SheduleViewModel())
       }
     }

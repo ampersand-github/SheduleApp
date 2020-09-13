@@ -24,7 +24,6 @@
 		D7B409672505840000BFF61E /* DeadlineParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409542505840000BFF61E /* DeadlineParts.swift */; };
 		D7B409682505840000BFF61E /* EditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409552505840000BFF61E /* EditingView.swift */; };
 		D7B409692505840000BFF61E /* SubmitButtonParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409562505840000BFF61E /* SubmitButtonParts.swift */; };
-		D7B4096A2505840000BFF61E /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409572505840000BFF61E /* InputView.swift */; };
 		D7B4096B2505840000BFF61E /* TextFieldParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409582505840000BFF61E /* TextFieldParts.swift */; };
 		D7B4096D2505840000BFF61E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4095B2505840000BFF61E /* CardView.swift */; };
 		D7B4096F2505840000BFF61E /* SheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4095D2505840000BFF61E /* SheduleView.swift */; };
@@ -89,7 +88,6 @@
 		D7B409542505840000BFF61E /* DeadlineParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadlineParts.swift; sourceTree = "<group>"; };
 		D7B409552505840000BFF61E /* EditingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingView.swift; sourceTree = "<group>"; };
 		D7B409562505840000BFF61E /* SubmitButtonParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButtonParts.swift; sourceTree = "<group>"; };
-		D7B409572505840000BFF61E /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		D7B409582505840000BFF61E /* TextFieldParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldParts.swift; sourceTree = "<group>"; };
 		D7B4095B2505840000BFF61E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D7B4095D2505840000BFF61E /* SheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleView.swift; sourceTree = "<group>"; };
@@ -300,7 +298,6 @@
 				D7B409582505840000BFF61E /* TextFieldParts.swift */,
 				D7B409562505840000BFF61E /* SubmitButtonParts.swift */,
 				D7B409542505840000BFF61E /* DeadlineParts.swift */,
-				D7B409572505840000BFF61E /* InputView.swift */,
 			);
 			path = parts;
 			sourceTree = "<group>";
@@ -577,7 +574,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D715EFC224FED5EA00FE09A8 /* Sample.swift in Sources */,
-				D7B4096A2505840000BFF61E /* InputView.swift in Sources */,
 				D7B409642505840000BFF61E /* SheduleModel.swift in Sources */,
 				D7B4096F2505840000BFF61E /* SheduleView.swift in Sources */,
 				D7B409692505840000BFF61E /* SubmitButtonParts.swift in Sources */,

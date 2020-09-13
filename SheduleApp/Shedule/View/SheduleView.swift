@@ -7,34 +7,27 @@
 //
 
 import SwiftUI
-
+// TODO: ソート機能
 struct SheduleView: View {
   @EnvironmentObject var todoVM: SheduleViewModel
   @State private var vibrateOnRing = false
   var body: some View {
-    // TODO: セーフエリアの設定
     VStack(alignment: .leading) {
-      // EditButton()
       List {
-        ForEach(todoVM.todoList) { todo in
+        ForEach(todoVM.todoList) { shedule in
           VStack {
-            CardView(todo: todo)
+            CardView(shedule: shedule)
             Spacer().frame(height: 8)
           }
         }
         .onDelete { indexSet in self.todoVM.deleteRecord(indexSet: indexSet) }
-        .onMove(perform: moveRecord)
       }.onAppear { UITableView.appearance().separatorStyle = .none }
         .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
-
         .padding(.horizontal, 24)
       Spacer()
     }
   }
 }
-
-// TODO: つくる
-func moveRecord(_ from: IndexSet, _ to: Int) {}
 
 struct SheduleView_Previews: PreviewProvider {
   static var previews: some View {

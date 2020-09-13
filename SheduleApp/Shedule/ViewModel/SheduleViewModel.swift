@@ -33,28 +33,21 @@ class SheduleViewModel: ObservableObject {
     token?.invalidate()
   }
 
-  /*
-   func addDammyList() {
-     let dammy1 = Calendar.current.date(byAdding: .day, value: -2, to: Date())!
-     let dammy2 = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-     let dammy3 = Calendar.current.date(byAdding: .day, value: 0, to: Date())!
-     let dammy4 = Calendar.current.date(byAdding: .day, value: 2, to: Date())!
-     let dammy5 = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
-     let dammy6 = Calendar.current.date(byAdding: .day, value: 3, to: Date())!
-     let dammy7 = Calendar.current.date(byAdding: .day, value: 4, to: Date())!
-     todoList.append(
-       contentsOf: [
-         SheduleModel(title: "アマゾンの注文が届く", dateDeadLine: dammy1, timeDeadLine: dammy1, isComplete: false),
-         SheduleModel(title: "OOUI本読む", dateDeadLine: dammy2, timeDeadLine: dammy2, isComplete: true),
-         SheduleModel(title: "試験の申込み", dateDeadLine: dammy3, timeDeadLine: dammy3, isComplete: false),
-         SheduleModel(title: "友達と遊ぶ", dateDeadLine: dammy4, timeDeadLine: dammy4, isComplete: false),
-         SheduleModel(title: "試験のための本を買う", dateDeadLine: dammy5, timeDeadLine: dammy5, isComplete: false),
-         SheduleModel(title: "クリーニングに出す", dateDeadLine: dammy6, timeDeadLine: dammy6, isComplete: false),
-         SheduleModel(title: "衣替えする", dateDeadLine: dammy7, timeDeadLine: dammy7, isComplete: false)
-       ]
-     )
-   }
-   */
+  func validate_isThereTitle(title: String) -> Bool {
+    if title.count == 0 {
+      return false
+    }
+    return true
+  }
+
+  // TODO: textfieldの挙動上、エンターなり、押して確定しないと反映されないので、実際には30字以上の登録も可能。このバグはtextfieldの挙動が変更されるまで待つ
+  func validate_isTitleLengthWithin30(title: String) -> Bool {
+    if title.count > 30 {
+      return false
+    }
+    return true
+  }
+
   func toggle(id: String, isComplete: Bool) {
     let realm = try? Realm()
     let record = realm?.objects(SheduleRealmModel.self).filter("id = %@", id).first
@@ -64,24 +57,33 @@ class SheduleViewModel: ObservableObject {
   }
 
   func convertFromModelToRealmModel(model: SheduleModel) -> SheduleRealmModel {
-    let aaaa = SheduleRealmModel()
-    print("- - - - - -")
-    print(editingShedule.title
-    )
-    aaaa.title = editingShedule.title
-    aaaa.title = editingShedule.title
-    aaaa.dateDeadLine = editingShedule.dateDeadLine
-    aaaa.timeDeadLine = editingShedule.timeDeadLine
-    aaaa.isComplete = editingShedule.isComplete
-    return aaaa
+    let model = SheduleRealmModel()
+    model.title = editingShedule.title
+    model.dateDeadLine = editingShedule.dateDeadLine
+    model.timeDeadLine = editingShedule.timeDeadLine
+    model.isComplete = editingShedule.isComplete
+    return model
   }
 
-  func addRecord() {
+  func createRecord() {
+    print("addRecord")
     let realm = try? Realm()
     try? realm?.write {
       realm?.add(
         convertFromModelToRealmModel(model: editingShedule)
       )
+    }
+  }
+
+  func updateRecord(todo: SheduleModel) {
+    print("updateRecord")
+    let realm = try? Realm()
+    let record = realm?.objects(SheduleRealmModel.self).filter("id = %@", todo.id).first
+    try? realm?.write {
+      record?.title = todo.title
+      record?.dateDeadLine = todo.dateDeadLine
+      record?.timeDeadLine = todo.timeDeadLine
+      record?.isComplete = todo.isComplete
     }
   }
 
@@ -104,6 +106,16 @@ class SheduleViewModel: ObservableObject {
       try? realm?.write {
         realm?.delete(record!)
       }
+    }
+  }
+
+  func isUpdate(id: String) -> Bool {
+    let realm = try? Realm()
+    let record = realm?.objects(SheduleRealmModel.self).filter("id = %@", id).first
+    if record == nil {
+      return false
+    } else {
+      return true
     }
   }
 }

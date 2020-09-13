@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct TextFieldParts: View {
-  @State private var title: String = ""
+  @State var title: String
   @EnvironmentObject var sheduleVM: SheduleViewModel
+
   var body: some View {
     VStack(alignment: .leading) {
       Text("メモのタイトル").font(.headline)
@@ -25,14 +26,16 @@ struct TextFieldParts: View {
       )
       .padding(.all)
       .modifier(InputModifier())
-      // TODO: validateはvmへ
-      // TODO: validate 30字以内
-      /*
-       if self.title.count == 0 {
-              Text("※" + "メモのタイトルを入力してください。")
-                .font(.caption)
-                .foregroundColor(Color.red)
-            }*/
+      if !self.sheduleVM.validate_isThereTitle(title: title) {
+        Text("※ " + "メモのタイトルを入力してください。")
+          .font(.caption)
+          .foregroundColor(Color.red)
+      }
+      if !self.sheduleVM.validate_isTitleLengthWithin30(title: title) {
+        Text("※ " + "30字以内で入力してください。")
+          .font(.caption)
+          .foregroundColor(Color.red)
+      }
     }
   }
 }

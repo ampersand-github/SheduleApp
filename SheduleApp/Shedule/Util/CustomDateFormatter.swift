@@ -8,11 +8,8 @@
 
 import SwiftUI
 
-// "yyyy/MM/dd"
 func customDateFormatter(format: String) -> DateFormatter {
   let formatter = DateFormatter()
   formatter.dateFormat = format
   return formatter
 }
-
-// static let timeFormatter: DateFormatter = CustomDateFormatter(format: "hh:mm")
