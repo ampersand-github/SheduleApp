@@ -15,16 +15,14 @@ struct SheduleView: View {
     VStack(alignment: .leading) {
       List {
         ForEach(todoVM.todoList) { shedule in
-          VStack {
-            CardView(shedule: shedule)
-            Spacer().frame(height: 8)
-          }
+          CardView(shedule: shedule)
         }
         .onDelete { indexSet in self.todoVM.deleteRecord(indexSet: indexSet) }
-      }.onAppear { UITableView.appearance().separatorStyle = .none }
-        .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
-        .padding(.horizontal, 24)
-      Spacer()
+      }
+      .onAppear { UITableView.appearance().separatorStyle = .none }
+      .onDisappear { UITableView.appearance().separatorStyle = .singleLine }
+      .padding(.horizontal, 24)
+      // Spacer()
     }
   }
 }

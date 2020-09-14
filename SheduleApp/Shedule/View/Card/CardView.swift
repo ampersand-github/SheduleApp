@@ -14,35 +14,26 @@ struct CardView: View {
   var shedule: SheduleModel
   let today: Date = Calendar.current.startOfDay(for: Date())
   func setTargetDay(day: Date) -> Date { Calendar.current.startOfDay(for: day) }
-  func toggle() {
-    todoVM.toggle(id: shedule.id, isComplete: shedule.isComplete)
-  }
-
-  func edit() {
-    isPresented = true
-  }
+  func toggle() { todoVM.toggle(id: shedule.id, isComplete: shedule.isComplete) }
+  func edit() { isPresented = true }
+  func calcDate() -> Int { Calendar.current.dateComponents([.day], from: today, to: shedule.dateDeadLine).day! }
 
   @State private var status = true
   var body: some View {
     HStack {
       VStack(alignment: .center) {
-        Image(systemName: "square.and.pencil").onTapGesture {
-          self.edit()
-        }.sheet(isPresented: $isPresented) {
-          EditingView(
-            isPresented: self.$isPresented,
-            shedule: self.shedule
-          ).environmentObject(SheduleViewModel())
-        }
+        EditIconButtonParts() // 作る
+
         Spacer().frame(height: 16)
-        Image(systemName: shedule.isComplete ? "checkmark.square" : "square").onTapGesture {
-          self.toggle()
-        }
+        // TODO: Parts化
+        Image(systemName: shedule.isComplete ? "checkmark.square" : "square")
+          .onTapGesture { self.toggle() }
       }
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -
       VStack(alignment: .leading) {
         Text(self.shedule.title).font(.headline)
         Spacer().frame(height: 8)
+        // TODO: Parts化
         HStack {
           Text(todoVM.dateFormatter.string(from: self.shedule.dateDeadLine))
           Text(todoVM.timeFormatter.string(from: self.shedule.timeDeadLine))
@@ -51,23 +42,17 @@ struct CardView: View {
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -
       Spacer()
       VStack(alignment: .trailing) {
+        // TODO: Parts化
         if setTargetDay(day: self.shedule.dateDeadLine) == today {
-          HStack {
-            Text("締切日！").fontWeight(.black).foregroundColor(Color.orange).font(.caption)
-          }
+          Text("締切日！").fontWeight(.black).foregroundColor(Color.orange).font(.caption)
         } else if setTargetDay(day: self.shedule.dateDeadLine) > today {
-          Text("あと" +
-            String(Calendar.current.dateComponents([.day], from: today, to: self.shedule.dateDeadLine).day!)
-            + "日"
-          )
-          .fontWeight(.bold).foregroundColor(Color.green).font(.caption).opacity(0.6)
+          Text("あと" + String(calcDate()) + "日").fontWeight(.bold).foregroundColor(Color.green).font(.caption).opacity(0.6)
         } else {
-          Text(String(Calendar.current.dateComponents([.day], from: self.shedule.dateDeadLine, to: today).day! + 1)
-            + "日超過"
-          ).fontWeight(.bold).foregroundColor(Color.red).font(.caption).opacity(0.6)
+          Text(String(calcDate() + 1) + "日超過").fontWeight(.bold).foregroundColor(Color.red).font(.caption).opacity(0.6)
         }
         Spacer().frame(height: 8)
         // TODO: tagどうしよう
+        // TODO: Parts化
         Text("tag").font(.caption).opacity(0.6)
       }
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -

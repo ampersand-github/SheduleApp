@@ -19,7 +19,7 @@ struct ContentView: View {
             .tabItem {
               VStack {
                 Image(systemName: "square.and.pencil")
-                Text("メモ")
+                Text("スケジュール")
               }
             }.tag(1)
           UserView()

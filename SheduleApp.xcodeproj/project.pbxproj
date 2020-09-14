@@ -10,6 +10,7 @@
 		03801716516AEF191AF86FBD /* libPods-SheduleAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A958AF0B42EA9702C60054B4 /* libPods-SheduleAppTests.a */; };
 		A106A38399159236FA84DA8E /* libPods-SheduleApp-SheduleAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6933673E722DFD637E36DEB4 /* libPods-SheduleApp-SheduleAppUITests.a */; };
 		D715EFC224FED5EA00FE09A8 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715EFC124FED5EA00FE09A8 /* Sample.swift */; };
+		D78BE1AC250EC64F00C7A1BC /* EditIconButtonParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78BE1AB250EC64F00C7A1BC /* EditIconButtonParts.swift */; };
 		D793C58E24FC4DBA00052127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793C58D24FC4DBA00052127 /* AppDelegate.swift */; };
 		D793C59024FC4DBA00052127 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793C58F24FC4DBA00052127 /* SceneDelegate.swift */; };
 		D793C59324FC4DBA00052127 /* SheduleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D793C59124FC4DBA00052127 /* SheduleApp.xcdatamodeld */; };
@@ -68,6 +69,7 @@
 		C7E132DB3659FDA8C42927FF /* libPods-SheduleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SheduleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D115381DDBC8B923130F74DB /* Pods-SheduleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheduleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SheduleAppTests/Pods-SheduleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D715EFC124FED5EA00FE09A8 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		D78BE1AB250EC64F00C7A1BC /* EditIconButtonParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIconButtonParts.swift; sourceTree = "<group>"; };
 		D793C58A24FC4DBA00052127 /* SheduleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SheduleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D793C58D24FC4DBA00052127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D793C58F24FC4DBA00052127 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,14 @@
 				D7BF04EC2502F69B003D66F6 /* SampleViewModel.swift */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		D78BE1AA250EC61500C7A1BC /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				D78BE1AB250EC64F00C7A1BC /* EditIconButtonParts.swift */,
+			);
+			path = Parts;
 			sourceTree = "<group>";
 		};
 		D793C58124FC4DBA00052127 = {
@@ -287,25 +297,26 @@
 			children = (
 				D7B409552505840000BFF61E /* EditingView.swift */,
 				D7B409522505840000BFF61E /* EditingFloatingActionButton.swift */,
-				D7B4097925058DE900BFF61E /* parts */,
+				D7B4097925058DE900BFF61E /* Parts */,
 			);
 			path = Editing;
 			sourceTree = "<group>";
 		};
-		D7B4097925058DE900BFF61E /* parts */ = {
+		D7B4097925058DE900BFF61E /* Parts */ = {
 			isa = PBXGroup;
 			children = (
 				D7B409582505840000BFF61E /* TextFieldParts.swift */,
 				D7B409562505840000BFF61E /* SubmitButtonParts.swift */,
 				D7B409542505840000BFF61E /* DeadlineParts.swift */,
 			);
-			path = parts;
+			path = Parts;
 			sourceTree = "<group>";
 		};
 		D7B4097A25058E1700BFF61E /* Card */ = {
 			isa = PBXGroup;
 			children = (
 				D7B4095B2505840000BFF61E /* CardView.swift */,
+				D78BE1AA250EC61500C7A1BC /* Parts */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -574,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D715EFC224FED5EA00FE09A8 /* Sample.swift in Sources */,
+				D78BE1AC250EC64F00C7A1BC /* EditIconButtonParts.swift in Sources */,
 				D7B409642505840000BFF61E /* SheduleModel.swift in Sources */,
 				D7B4096F2505840000BFF61E /* SheduleView.swift in Sources */,
 				D7B409692505840000BFF61E /* SubmitButtonParts.swift in Sources */,
