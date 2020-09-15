@@ -20,6 +20,8 @@
 		D793C59D24FC4DBB00052127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D793C59B24FC4DBB00052127 /* LaunchScreen.storyboard */; };
 		D793C5A824FC4DBC00052127 /* SheduleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793C5A724FC4DBC00052127 /* SheduleAppTests.swift */; };
 		D793C5B324FC4DBC00052127 /* SheduleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793C5B224FC4DBC00052127 /* SheduleAppUITests.swift */; };
+		D794968C25100C2300F831AE /* CheckBoxParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D794968B25100C2300F831AE /* CheckBoxParts.swift */; };
+		D794968E25100E8500F831AE /* ShowDeadLineParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D794968D25100E8500F831AE /* ShowDeadLineParts.swift */; };
 		D7B409642505840000BFF61E /* SheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409502505840000BFF61E /* SheduleModel.swift */; };
 		D7B409652505840000BFF61E /* EditingFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409522505840000BFF61E /* EditingFloatingActionButton.swift */; };
 		D7B409672505840000BFF61E /* DeadlineParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B409542505840000BFF61E /* DeadlineParts.swift */; };
@@ -85,6 +87,8 @@
 		D793C5AE24FC4DBC00052127 /* SheduleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SheduleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D793C5B224FC4DBC00052127 /* SheduleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleAppUITests.swift; sourceTree = "<group>"; };
 		D793C5B424FC4DBC00052127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D794968B25100C2300F831AE /* CheckBoxParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxParts.swift; sourceTree = "<group>"; };
+		D794968D25100E8500F831AE /* ShowDeadLineParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDeadLineParts.swift; sourceTree = "<group>"; };
 		D7B409502505840000BFF61E /* SheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleModel.swift; sourceTree = "<group>"; };
 		D7B409522505840000BFF61E /* EditingFloatingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingFloatingActionButton.swift; sourceTree = "<group>"; };
 		D7B409542505840000BFF61E /* DeadlineParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadlineParts.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				D78BE1AB250EC64F00C7A1BC /* EditIconButtonParts.swift */,
+				D794968B25100C2300F831AE /* CheckBoxParts.swift */,
+				D794968D25100E8500F831AE /* ShowDeadLineParts.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -601,7 +607,9 @@
 				D7B4096B2505840000BFF61E /* TextFieldParts.swift in Sources */,
 				D7B409712505840000BFF61E /* CustomDateFormatter.swift in Sources */,
 				D7B409772505883900BFF61E /* UserView.swift in Sources */,
+				D794968C25100C2300F831AE /* CheckBoxParts.swift in Sources */,
 				D7B409732505840000BFF61E /* SheduleViewModel.swift in Sources */,
+				D794968E25100E8500F831AE /* ShowDeadLineParts.swift in Sources */,
 				D7B409702505840000BFF61E /* InputModifier.swift in Sources */,
 				D7B4096D2505840000BFF61E /* CardView.swift in Sources */,
 				D793C59324FC4DBA00052127 /* SheduleApp.xcdatamodeld in Sources */,

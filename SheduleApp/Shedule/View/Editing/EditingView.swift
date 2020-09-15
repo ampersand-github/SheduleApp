@@ -21,13 +21,13 @@ struct EditingView: View {
     sheduleVM.editingShedule = shedule
   }
 
-  // TODO: レイアウト崩れ対応
   var body: some View {
     NavigationView {
       ScrollView(showsIndicators: false) {
         VStack {
           Spacer().frame(height: 24)
           TextFieldParts(title: shedule.title)
+            .padding(EdgeInsets(top: 0, leading: 36, bottom: 0, trailing: 36))
           Spacer().frame(height: 16)
           DeadlineParts(type: "date")
           Spacer().frame(height: 16)
@@ -36,10 +36,10 @@ struct EditingView: View {
           SubmitButtonParts(isPresented: self.$isPresented, opacity: 1.0)
           Spacer()
             .navigationBarTitle("スケジュールを作成")
-        }
+        }.padding(EdgeInsets(top: 24, leading: 8, bottom: 24, trailing: 8))
       }
-    }.padding(EdgeInsets(top: 24, leading: 16, bottom: 24, trailing: 16))
-      .onAppear { self.setEditingShedule() } // ★viewDidLoadが呼び出されたときに関数を実行する
+    }
+    .onAppear { self.setEditingShedule() } // ★viewDidLoadが呼び出されたときに関数を実行する
   }
 }
 

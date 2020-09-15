@@ -12,28 +12,19 @@ struct CardView: View {
   @EnvironmentObject var todoVM: SheduleViewModel
   @State private var isPresented = false
   var shedule: SheduleModel
-  let today: Date = Calendar.current.startOfDay(for: Date())
-  func setTargetDay(day: Date) -> Date { Calendar.current.startOfDay(for: day) }
-  func toggle() { todoVM.toggle(id: shedule.id, isComplete: shedule.isComplete) }
-  func edit() { isPresented = true }
-  func calcDate() -> Int { Calendar.current.dateComponents([.day], from: today, to: shedule.dateDeadLine).day! }
 
   @State private var status = true
   var body: some View {
     HStack {
       VStack(alignment: .center) {
-        EditIconButtonParts() // 作る
-
+        EditIconButtonParts(isPresented: isPresented, shedule: shedule) // 作る
         Spacer().frame(height: 16)
-        // TODO: Parts化
-        Image(systemName: shedule.isComplete ? "checkmark.square" : "square")
-          .onTapGesture { self.toggle() }
+        CheckBoxParts(shedule: shedule)
       }
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -
       VStack(alignment: .leading) {
         Text(self.shedule.title).font(.headline)
         Spacer().frame(height: 8)
-        // TODO: Parts化
         HStack {
           Text(todoVM.dateFormatter.string(from: self.shedule.dateDeadLine))
           Text(todoVM.timeFormatter.string(from: self.shedule.timeDeadLine))
@@ -42,14 +33,8 @@ struct CardView: View {
       // - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  - - - -  -
       Spacer()
       VStack(alignment: .trailing) {
-        // TODO: Parts化
-        if setTargetDay(day: self.shedule.dateDeadLine) == today {
-          Text("締切日！").fontWeight(.black).foregroundColor(Color.orange).font(.caption)
-        } else if setTargetDay(day: self.shedule.dateDeadLine) > today {
-          Text("あと" + String(calcDate()) + "日").fontWeight(.bold).foregroundColor(Color.green).font(.caption).opacity(0.6)
-        } else {
-          Text(String(calcDate() + 1) + "日超過").fontWeight(.bold).foregroundColor(Color.red).font(.caption).opacity(0.6)
-        }
+        ShowDeadLineParts(shedule: shedule)
+
         Spacer().frame(height: 8)
         // TODO: tagどうしよう
         // TODO: Parts化

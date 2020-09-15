@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct EditIconButtonParts: View {
+  func edit() { isPresented = true }
+  @State var isPresented: Bool
+  var shedule: SheduleModel
   var body: some View {
     Image(systemName: "square.and.pencil").onTapGesture {
       self.edit()

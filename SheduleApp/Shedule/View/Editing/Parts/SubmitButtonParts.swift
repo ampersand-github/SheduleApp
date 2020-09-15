@@ -5,7 +5,6 @@
 //  Created by 開発 on 2020/08/21.
 //  Copyright © 2020 開発. All rights reserved.
 //
-
 import SwiftUI
 
 struct SubmitButtonParts: View {
@@ -13,17 +12,17 @@ struct SubmitButtonParts: View {
   let opacity: Double
   @EnvironmentObject var sheduleVM: SheduleViewModel
 
-func pushButton() {le(
-  isPresented.toggle()
-  if sheduleVM.isUpdate(id: sheduleVM.editingShedule.id) {
-    sheduleVM.updateRecord(todo: sheduleVM.editingShedule)
-  } else {
-    sheduleVM.createRecord()
+  func pushButton() {
+    isPresented.toggle()
+    if sheduleVM.isUpdate(id: sheduleVM.editingShedule.id) {
+      sheduleVM.updateRecord(todo: sheduleVM.editingShedule)
+    } else {
+      sheduleVM.createRecord()
+    }
   }
-}
 
-func canSubmit() -> Bool {
-  if !sheduleVM.validate_isThereTittitle: sheduleVM.editingShedule.title) { return false }
+  func canSubmit() -> Bool {
+    if !sheduleVM.validate_isThereTitle(title: sheduleVM.editingShedule.title) { return false }
     if !sheduleVM.validate_isTitleLengthWithin30(title: sheduleVM.editingShedule.title) { return false }
     return true
   }
