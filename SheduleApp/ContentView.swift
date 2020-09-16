@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct ContentView: View {
-  @Environment(\.presentationMode) var presentationMode
   @State private var index: Int = 0
   var body: some View {
     ZStack {

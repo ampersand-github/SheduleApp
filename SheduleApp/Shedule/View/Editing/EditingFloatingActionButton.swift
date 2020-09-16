@@ -36,9 +36,3 @@ struct EditingFloatingActionButton: View {
     }
   }
 }
-
-struct EditingFloatingActionButton_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
-  }
-}

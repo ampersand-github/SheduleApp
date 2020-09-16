@@ -5,7 +5,6 @@
 //  Created by 開発 on 2020/08/14.
 //  Copyright © 2020 開発. All rights reserved.
 //
-締切
 import RealmSwift
 import SwiftUI
 
@@ -21,7 +20,7 @@ class SheduleViewModel: ObservableObject {
   private var modelResults = try? Realm().objects(SheduleRealmModel.self)
   @Published var todoList: [SheduleModel] = []
 
-  init(isSetDammy: Bool = false) {
+  init() {
     token = modelResults?.observe { [weak self] _ in
       self?.todoList = self?.modelResults?.map {
         SheduleModel(id: $0.id, title: $0.title, dateDeadLine: $0.dateDeadLine, timeDeadLine: $0.timeDeadLine, isComplete: $0.isComplete)
